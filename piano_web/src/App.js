@@ -1,10 +1,11 @@
-
-import './App.css';
-
+import './Style.css';
+import TopNavBar from './components/TopNavBar'; // Import the TopNavBar component
 function App() {
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <header className="App-header">
+      <TopNavBar/>
+      </header>
     </div>
   );
 }
