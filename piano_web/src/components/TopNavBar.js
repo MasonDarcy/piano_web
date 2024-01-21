@@ -7,7 +7,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import PricingIcon from '@mui/icons-material/AttachMoney';
 import ServicesIcon from '@mui/icons-material/Build';
 import AboutIcon from '@mui/icons-material/Info';
-import PhoneIcon from '@mui/icons-material/Phone'; // Import the phone icon
+import PhoneIcon from '@mui/icons-material/Phone'; 
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 const TopNavBar = () => {
