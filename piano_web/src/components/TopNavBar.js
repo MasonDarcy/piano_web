@@ -1,13 +1,13 @@
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
+import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import Button from '@mui/material/Button'; // Make sure to import Button
 import HomeIcon from '@mui/icons-material/Home';
-import PricingIcon from '@mui/icons-material/AttachMoney'; // Example icon for Pricing
-import ServicesIcon from '@mui/icons-material/Build'; // Example icon for Services
-import AboutIcon from '@mui/icons-material/Info'; // Example icon for About
-import ContactIcon from '@mui/icons-material/ContactMail'; // Example icon for Contact
+import PricingIcon from '@mui/icons-material/AttachMoney';
+import ServicesIcon from '@mui/icons-material/Build';
+import AboutIcon from '@mui/icons-material/Info';
+import PhoneIcon from '@mui/icons-material/Phone'; // Import the phone icon
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 const TopNavBar = () => {
@@ -22,7 +22,7 @@ const TopNavBar = () => {
             <IconButton color="inherit" href="#"><PricingIcon /></IconButton>
             <IconButton color="inherit" href="#"><ServicesIcon /></IconButton>
             <IconButton color="inherit" href="#"><AboutIcon /></IconButton>
-            <IconButton color="inherit" href="#"><ContactIcon /></IconButton>
+            <IconButton color="inherit" href="#"><PhoneIcon /></IconButton> {/* Phone icon for contact */}
           </>
         ) : (
           <>
