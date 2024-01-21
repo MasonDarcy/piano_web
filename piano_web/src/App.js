@@ -1,5 +1,5 @@
 import './Style.css';
-import TopNavBar from './components/TopNavBar'; // Import the TopNavBar component
+import TopNavBar from './components/TopNavBar'; 
 function App() {
   return (
     <div className="App">
