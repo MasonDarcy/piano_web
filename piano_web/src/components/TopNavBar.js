@@ -1,36 +1,34 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import HomeIcon from '@mui/icons-material/Home';
+import HelpIcon from '@mui/icons-material/HelpOutline'; 
 import PricingIcon from '@mui/icons-material/AttachMoney';
-import ServicesIcon from '@mui/icons-material/Build';
-import AboutIcon from '@mui/icons-material/Info';
 import PhoneIcon from '@mui/icons-material/Phone'; 
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 const TopNavBar = () => {
-  const isMobile = useMediaQuery('(max-width:600px)'); // Adjust the breakpoint as needed
+  const isMobile = useMediaQuery('(max-width:600px)');
 
   return (
     <AppBar position="static" style={{ backgroundColor: '#212121' }}>
       <Toolbar style={styles.toolbar}>
         {isMobile ? (
           <>
-            <IconButton color="inherit" href="#"><HomeIcon /></IconButton>
-            <IconButton color="inherit" href="#"><PricingIcon /></IconButton>
-            <IconButton color="inherit" href="#"><ServicesIcon /></IconButton>
-            <IconButton color="inherit" href="#"><AboutIcon /></IconButton>
-            <IconButton color="inherit" href="#"><PhoneIcon /></IconButton> {/* Phone icon for contact */}
+            <IconButton color="inherit" component={Link} to="/" aria-label="Home"><HomeIcon /></IconButton>
+            <IconButton color="inherit" component={Link} to="/faq" aria-label="FAQ"><HelpIcon /></IconButton>
+            <IconButton color="inherit" component={Link} to="/pricing" aria-label="Pricing"><PricingIcon /></IconButton>
+            <IconButton color="inherit" component={Link} to="/contact" aria-label="Contact"><PhoneIcon /></IconButton>
           </>
         ) : (
           <>
-            <Button color="inherit" href="#" style={styles.navButton}>Home</Button>
-            <Button color="inherit" href="#" style={styles.navButton}>Pricing</Button>
-            <Button color="inherit" href="#" style={styles.navButton}>Services</Button>
-            <Button color="inherit" href="#" style={styles.navButton}>About</Button>
-            <Button color="inherit" href="#" style={styles.navButton}>Contact</Button>
+            <Button color="inherit" component={Link} to="/" style={styles.navButton}>Home</Button>
+            <Button color="inherit" component={Link} to="/faq" style={styles.navButton} aria-label="FAQ">FAQ</Button>
+            <Button color="inherit" component={Link} to="/pricing" style={styles.navButton} aria-label="Pricing">Pricing</Button>
+            <Button color="inherit" component={Link} to="/contact" style={styles.navButton} aria-label="Contact">Contact</Button>
           </>
         )}
       </Toolbar>

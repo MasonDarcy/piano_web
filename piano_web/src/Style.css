@@ -1,0 +1,13 @@
+.splash-container {
+  text-align: center;
+  padding: 100px 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* Light background for the text */
+  margin-bottom: 50px; /* Space before the parallax effect */
+}
+
+.parallax-inside {
+  padding: 200px 0;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: for better readability on the parallax background */
+}
