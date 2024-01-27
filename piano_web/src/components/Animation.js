@@ -18,11 +18,11 @@ const SimpleAnimation = ({ paperSize }) => {
   }, [keys]);
 
   const keyPattern = ['white', 'black', 'white', 'black', 'white', 'white', 'black', 'white', 'black', 'white', 'black', 'white'];
-  const keyboardLength = 48;
+  const keyboardLength = 51;
   let keysElements = [];
 
   // Calculate key dimensions based on paperSize
-  const keyWidth = paperSize.width / 13; // Example factor, adjust as needed
+  const keyWidth = paperSize.width / 30; // Example factor, adjust as needed
   const keyHeight = paperSize.height / 1.3; // Example factor, adjust as needed
 
   for (let i = 0, w = 0; i < keyboardLength; i++) {
