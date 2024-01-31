@@ -81,15 +81,19 @@ const styles = {
     zIndex: -1
   },
   whiteKey: {
-    backgroundColor: 'white',
-    border: '1px solid black',
+    backgroundColor: '#fff', // Brighter white color
+    border: '1px solid #ddd', // Lighter border for a more subtle effect
+    boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.2)', // Soft shadow for depth
+    borderRadius: '2px', // Slightly rounded corners
     opacity: 0,
     position: 'absolute',
     top: '0',
     zIndex: 0
   },
   blackKey: {
-    backgroundColor: 'black',
+    backgroundColor: '#333', // Slightly lighter black for a more realistic look
+    boxShadow: '1px 1px 4px rgba(0, 0, 0, 0.3)', // Shadow to give depth
+    borderRadius: '2px', // Slightly rounded corners
     opacity: 0,
     position: 'absolute',
     top: '0',
