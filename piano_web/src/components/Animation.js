@@ -10,8 +10,10 @@ const SimpleAnimation = ({ paperSize }) => {
           { transform: 'translateY(-100px)', opacity: 0 },
           { transform: 'translateY(0)', opacity: 1 }
         ], {
-          duration: 800 + index * 50,
-          easing: 'ease-in',
+          // Adjusted duration and added delay
+          duration: 500, // Shorter duration for snappier feel
+          easing: 'cubic-bezier(0.22, 1, 0.36, 1)', // Custom cubic-bezier for dynamic effect
+          delay: index * 35, // Staggered delay for each key
           fill: 'forwards'
         });
       }
