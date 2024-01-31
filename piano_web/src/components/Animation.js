@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 const SimpleAnimation = ({ paperSize }) => {
   const [keys, setKeys] = useState([]);
+
   useEffect(() => {
     keys.forEach((key, index) => {
       if (key) {
@@ -21,14 +22,33 @@ const SimpleAnimation = ({ paperSize }) => {
   const keyboardLength = 51;
   let keysElements = [];
 
-  // Calculate key dimensions based on paperSize
-  const keyWidth = paperSize.width / 30; // Example factor, adjust as needed
-  const keyHeight = paperSize.height / 1.3; // Example factor, adjust as needed
+  // Dynamic calculation for horizontalOffset and fixedKeyHeight
+  const maxOffset = 8; // Maximum offset in pixels
+  const minOffset = -5; // Minimum offset in pixels
+  const screenWidthThreshold = 500; // Threshold for screen width to start reducing offset
+
+  let horizontalOffset = maxOffset;
+  if (paperSize.width < screenWidthThreshold) {
+    const reductionFactor = (maxOffset - minOffset) * (screenWidthThreshold - paperSize.width) / screenWidthThreshold;
+    horizontalOffset = Math.max(minOffset, maxOffset - reductionFactor);
+  }
+
+  const minKeyHeight = 80; // Minimum key height in pixels
+  const maxKeyHeight = 120; // Maximum key height in pixels
+  const fixedKeyHeight = minKeyHeight + (maxKeyHeight - minKeyHeight) * (paperSize.width / screenWidthThreshold);
+  
+  // Width calculation based on paperSize
+  const keyWidth = `${100 / (keyboardLength * 0.6)}%`; // Adjust factor as needed
 
   for (let i = 0, w = 0; i < keyboardLength; i++) {
     const isWhite = keyPattern[i % keyPattern.length] === 'white';
-    const keyStyle = isWhite ? { ...styles.whiteKey, width: keyWidth + 'px', height: keyHeight + 'px' } : { ...styles.blackKey, width: keyWidth * 0.7 + 'px', height: keyHeight * 0.6 + 'px' }; // Adjust black key dimensions accordingly
-    const leftPosition = isWhite ? `${w * keyWidth}px` : `${w * keyWidth - keyWidth * 0.35}px`;
+    const keyStyle = isWhite ? 
+      { ...styles.whiteKey, width: keyWidth, height: fixedKeyHeight + 'px' } : 
+      { ...styles.blackKey, width: parseFloat(keyWidth) * 0.7 + '%', height: fixedKeyHeight * 0.6 + 'px' };
+
+    const leftPosition = isWhite ? 
+      `calc(${w * parseFloat(keyWidth)}% + ${horizontalOffset}px)` : 
+      `calc(${w * parseFloat(keyWidth) - parseFloat(keyWidth) * 0.35}% + ${horizontalOffset}px)`;
 
     keysElements.push(
       <div
@@ -54,7 +74,7 @@ const SimpleAnimation = ({ paperSize }) => {
 const styles = {
   animationContainer: {
     position: 'relative',
-    height: '200px', // Fixed height, adjust if needed
+    height: '200px', // Adjust if needed
     width: '100%',
     zIndex: -1
   },
