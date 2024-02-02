@@ -1,37 +1,32 @@
 import React from 'react';
 import { Paper, Typography, Container } from '@mui/material';
-import Metronome from './Metronome'; // Adjust the path if Metronome is not in the same directory
+import Metronome from './Metronome'; // Ensure this is the correct path to your Metronome component
 
-const FAQ = () => {
+const Info = () => {
   return (
     <Container maxWidth="md" style={{ marginTop: '20px' }}>
       <Paper style={{ padding: '20px', backgroundColor: '#212121', color: '#f5f5dc' }}>
         <Typography variant="h4" component="h1" style={{ textAlign: 'center', marginBottom: '20px' }}>
-          Frequently Asked Questions
+          Piano Antagonists
         </Typography>
 
-        {/* Example placement of the Metronome component */}
-        <Metronome />
-
+        {/* FAQ content */}
         <div>
           <Typography variant="h6" component="h2" style={{ color: '#f5f5dc' }}>
-            Question 1
+            Time
           </Typography>
           <Typography variant="body1" style={{ marginBottom: '15px', color: '#f5f5dc' }}>
-            Answer to question 1...
+            Here's the answer to question 1...
           </Typography>
         </div>
         <div>
-          <Typography variant="h6" component="h2" style={{ color: '#f5f5dc' }}>
-            Question 2
-          </Typography>
-          <Typography variant="body1" style={{ marginBottom: '15px', color: '#f5f5dc' }}>
-            Answer to question 2...
-          </Typography>
         </div>
+        {/* You can add more questions and answers here */}
       </Paper>
+       {/* Metronome component is displayed here */}
+       <Metronome />
     </Container>
   );
 }
 
-export default FAQ;
+export default Info;

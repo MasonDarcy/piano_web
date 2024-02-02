@@ -19,14 +19,14 @@ const TopNavBar = () => {
         {isMobile ? (
           <>
             <IconButton color="inherit" component={Link} to="/" aria-label="Home"><HomeIcon /></IconButton>
-            <IconButton color="inherit" component={Link} to="/faq" aria-label="FAQ"><HelpIcon /></IconButton>
+            <IconButton color="inherit" component={Link} to="/info" aria-label="FAQ"><HelpIcon /></IconButton>
             <IconButton color="inherit" component={Link} to="/pricing" aria-label="Pricing"><PricingIcon /></IconButton>
             <IconButton color="inherit" component={Link} to="/contact" aria-label="Contact"><PhoneIcon /></IconButton>
           </>
         ) : (
           <>
             <Button color="inherit" component={Link} to="/" style={styles.navButton}>Home</Button>
-            <Button color="inherit" component={Link} to="/faq" style={styles.navButton} aria-label="FAQ">FAQ</Button>
+            <Button color="inherit" component={Link} to="/info" style={styles.navButton} aria-label="INFO">Info</Button>
             <Button color="inherit" component={Link} to="/pricing" style={styles.navButton} aria-label="Pricing">Pricing</Button>
             <Button color="inherit" component={Link} to="/contact" style={styles.navButton} aria-label="Contact">Contact</Button>
           </>

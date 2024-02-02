@@ -21,6 +21,18 @@ const MetronomeShape = () => {
     position: 'relative', // Relative positioning for the hat
     zIndex: 3
   };
+  
+  const weightStyle = {
+    width: '18px', // Width of the trapezoid base
+    height: '10px', // Height of the trapezoid
+    backgroundColor: 'grey', // Color of the weight
+    position: 'absolute',
+    bottom: '-5px', // Positioning slightly below the arm to appear as if it's hanging
+    left: '50%', // Center horizontally relative to the arm
+    transform: 'translate(-50%, -400%)', // Center the weight
+    clipPath: 'polygon(0% 100%, 25% 0%, 75% 0%, 100% 100%)', // Trapezoid shape
+    zIndex: 12, // Ensure the weight is above the arm (if needed)
+  };
 
   const scale = {
     width: '7.5px', // Width of the metronome at the base
@@ -71,10 +83,10 @@ const MetronomeShape = () => {
     // CSS animation for swinging the arm
     const arm = armRef.current;
     arm.animate([
-      { transform: 'rotate(-30deg)' }, // Swing to the left
-      { transform: 'rotate(30deg)' }   // Swing to the right
+      { transform: 'rotate(-35deg)' }, // Swing to the left
+      { transform: 'rotate(35deg)' }   // Swing to the right
     ], {
-      duration: 1000, // Duration of one swing cycle
+      duration: 900, // Duration of one swing cycle
       iterations: Infinity, // Repeat the animation indefinitely
       easing: 'ease-in-out', // Accelerate and decelerate the movement
       direction: 'alternate', // Alternate between swinging left and right
@@ -89,7 +101,9 @@ const MetronomeShape = () => {
         <div style={scale}></div>
       </div>
       <div style={scaleInlay}></div>
-      <div ref={armRef} style={armStyle}></div>
+      <div ref={armRef} style={armStyle}>
+          <div style={weightStyle}></div> {/* Weight */}
+        </div>
     </div>
   );
 };

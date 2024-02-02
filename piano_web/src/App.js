@@ -3,10 +3,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './Style.css';
 import TopNavBar from './components/TopNavBar';
 import Home from './components/Home';
-import Faq from './components/Faq';
+import Info from './components/Info';
 import Pricing from './components/Pricing';
 import Contact from './components/Contact';
-import Metronome from './components/Metronome';
 
 
 function App() {
@@ -19,7 +18,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/faq" element={<Metronome />} />
+            <Route path="/info" element={<Info />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
