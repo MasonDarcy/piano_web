@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './Style.css';
 import TopNavBar from './components/TopNavBar';
 import Home from './components/Home';
-import Info from './components/Info';
+import Basics from './components/Basics';
 import Pricing from './components/Pricing';
 import Contact from './components/Contact';
 
@@ -18,7 +18,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/info" element={<Info />} />
+            <Route path="/basics" element={<Basics />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
