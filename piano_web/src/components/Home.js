@@ -1,8 +1,9 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Container, Typography, Paper } from '@mui/material';
-import SimpleAnimation from './Animation'; 
+import SimpleAnimation from './FallingKeysAnimation'; 
 import '../Style.css';
 import logo from '../R/alpha.png'; 
+import uwoLogo from '../R/western.png'; // Adjust the path as needed
 
 const Home = () => {
   const paperRef = useRef(null);
@@ -23,7 +24,6 @@ const Home = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Function to calculate font size based on paper width
   const getDynamicFontSize = () => {
     if (paperSize.width > 600) {
       return '2rem'; // default size
@@ -39,29 +39,27 @@ const Home = () => {
         <Typography variant="h3" component="h1" style={{ color: '#f5f5dc', fontSize: getDynamicFontSize() }}>
           Toronto Piano Tuning
         </Typography>
-        <Typography variant="subtitle1" style={{ marginBottom: '20px', color: '#f5f5dc' }}>
-          Certified by <a href="https://music.uwo.ca/about/resources/pianos.html" style={{ color: '#f5f5dc' }} target="_blank" rel="noopener noreferrer">UWO</a>
-        </Typography>
-        <Typography variant="body1" style={{ color: '#f5f5dc', textAlign: 'center' }}>
-          Quality and affordable tuning for pianists across the GTA.
-        </Typography>
+        <Typography variant="subtitle1" style={{ marginBottom: '20px', color: '#f5f5dc', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+  <img src={uwoLogo} alt="UWO Logo" style={{ width: '25px', marginRight: '10px' }} />
+  <a href="https://music.uwo.ca/about/resources/pianos.html" 
+     style={{ 
+       color: 'rgba(212, 175, 55, 0.8)', // Soft gold color with some transparency
+       textDecoration: 'underline' // Adds underline to the link
+     }} 
+     target="_blank" 
+     rel="noopener noreferrer">
+    UWO certified
+  </a>
+</Typography>
+          <Typography variant="body1" style={{ color: '#f5f5dc', textAlign: 'center' }}>
+            Quality and affordable tuning across the GTA
+          </Typography>
+
       </Paper>
 
       <SimpleAnimation paperSize={paperSize} />
     </Container>
   );
-};
-
-const styles = {
-  symbolStyle: {
-    color: 'rgba(245, 245, 220, 0.2)',
-    fontSize: '10rem',
-    position: 'absolute',
-    top: '50%',
-    left: '10%',
-    transform: 'translateY(-50%)',
-    zIndex: 0
-  }
 };
 
 export default Home;

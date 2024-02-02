@@ -6,6 +6,8 @@ import Home from './components/Home';
 import Faq from './components/Faq';
 import Pricing from './components/Pricing';
 import Contact from './components/Contact';
+import Metronome from './components/Metronome';
+
 
 function App() {
   return (
@@ -17,7 +19,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/faq" element={<Faq />} />
+            <Route path="/faq" element={<Metronome />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
