@@ -29,7 +29,6 @@ const FAQ = () => {
             Answer to question 2...
           </Typography>
         </div>
-        {/* Add more questions as needed */}
       </Paper>
     </Container>
   );
