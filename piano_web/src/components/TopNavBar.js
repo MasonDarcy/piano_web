@@ -26,7 +26,7 @@ const TopNavBar = () => {
         ) : (
           <>
             <Button color="inherit" component={Link} to="/" style={styles.navButton}>Home</Button>
-            <Button color="inherit" component={Link} to="/basics" style={styles.navButton} aria-label="Why Tune?">Why Tune?</Button>
+            <Button color="inherit" component={Link} to="/basics" style={styles.navButton} aria-label="Why Tune?">Tips</Button>
             <Button color="inherit" component={Link} to="/pricing" style={styles.navButton} aria-label="Pricing">Pricing</Button>
             <Button color="inherit" component={Link} to="/contact" style={styles.navButton} aria-label="Contact">Contact</Button>
           </>

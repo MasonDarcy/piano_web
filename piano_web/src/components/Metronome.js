@@ -93,19 +93,19 @@ const MetronomeShape = () => {
     });
   }, []);
 
-  return (
-    <div style={{ position: 'relative', display: 'inline-block', padding: '20px', overflow: 'visible'}}>
-      <div style={hatStyle}></div> 
-      <div style={metronomeBodyStyle}>
-        <div style={insetStyle}></div>
-        <div style={scale}></div>
-      </div>
-      <div style={scaleInlay}></div>
-      <div ref={armRef} style={armStyle}>
-          <div style={weightStyle}></div> {/* Weight */}
-        </div>
+return (
+  <div style={{ position: 'relative', display: 'inline-block', padding: '20px 20px 0 20px', overflow: 'visible' }}> {/* Reduced bottom padding */}
+    <div style={hatStyle}></div>
+    <div style={metronomeBodyStyle}>
+      <div style={insetStyle}></div>
+      <div style={scale}></div>
     </div>
-  );
+    <div style={scaleInlay}></div>
+    <div ref={armRef} style={armStyle}>
+      <div style={weightStyle}></div> {/* Weight */}
+    </div>
+  </div>
+);
 };
 
 export default MetronomeShape;

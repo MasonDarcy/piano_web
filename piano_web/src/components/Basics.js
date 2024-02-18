@@ -1,34 +1,72 @@
-import React from 'react';
-import { Paper, Typography, Container, Card, CardContent, Grid } from '@mui/material';
-import Metronome from './Metronome'; // Ensure this is the correct path to your Metronome component
-import Snowflake from './Snowflake'; // Ensure this is the correct path to your Thermometer component
-import Sun from './Sun'; // Ensure this is the correct path to your Thermometer component
+import React, { useState } from 'react';
+import { Paper, Typography, Container, Card, CardContent, Grid, Button } from '@mui/material';
+import Metronome from './Metronome'; 
+import Droplet from "./Droplet";
+import Snowflake from "./Snowflake";
 
 const Basics = () => {
+  // State to track which submenu is active
+  const [activeMenu, setActiveMenu] = useState('Time');
+
+  // Placeholder content for each submenu
+  const content = {
+    Time: {
+      animation: <Metronome />,
+      points: [
+        'Time changes tension',
+        'Incorrect tension damages the instrument',
+        'Tuning increases the longevity of the piano'
+      ]
+    },
+    Temp: {
+      animation: <div style={{ marginTop: '40px' }}><Snowflake /></div>, // Adjust marginTop as needed
+      points: [
+        'Temperature changes warp wood',
+        'Sudden changes in temperature will affect tension',
+        'Ideal room temperature for pianos is between 20°C and 22°C'
+      ]
+    },
+    Humidity: {
+      animation: <Droplet />,
+      points: [
+        'High humidity can lead to sticky keys and other component issues',
+        'Low humidity can cause cracks in the wood',
+        'Maintain relative humidity between 45% of 70% for the instrument'
+      ]
+    }
+  };
+
   return (
     <Container maxWidth="md" style={{ marginTop: '20px' }}>
       <Paper style={{ padding: '20px', backgroundColor: '#212121', color: '#f5f5dc' }}>
         <Typography variant="h4" component="h1" style={{ textAlign: 'center', marginBottom: '20px' }}>
           Piano Preservation
         </Typography>
+        {/* Submenu buttons */}
+        <Grid container spacing={2} justifyContent="center">
+          {Object.keys(content).map((menu) => (
+            <Grid item key={menu}>
+              <Button variant={activeMenu === menu ? 'contained' : 'text'} color="primary" onClick={() => setActiveMenu(menu)}>
+                {menu}
+              </Button>
+            </Grid>
+          ))}
+        </Grid>
       </Paper>
-      {/* Card for Metronome and Thermometer side by side */}
       <Card style={{ marginTop: '20px', backgroundColor: '#ffffff', padding: '20px' }}>
         <CardContent>
-          <Grid container spacing={2} justifyContent="center" alignItems="center">
-          <Grid item>
-              <Sun />
+          <Grid container spacing={2} justifyContent="center" alignItems="flex-start" direction="row-reverse">
+            <Grid item xs={12} sm={8}>
+              <div style={{ marginTop: '30px', textAlign: 'justify', marginLeft: '20px' }}>
+                {content[activeMenu].points.map((point, index) => (
+                  <p key={index}>• {point}</p>
+                ))}
+              </div>
             </Grid>
-            <Grid item>
-              <Metronome />
-            </Grid>
-            <Grid item>
-              <Snowflake />
+            <Grid item xs={12} sm={4} style={{ textAlign: 'center' }} order={{ xs: 1, sm: 2 }}>
+              {content[activeMenu].animation}
             </Grid>
           </Grid>
-          <Typography variant="body1" style={{ marginTop: '20px', textAlign: 'center' }}>
-            Your instrument is designed to be under specific tension. Tension changes with time, temperature and humidity. A piano at the wrong tension level becomes damaged.
-          </Typography>
         </CardContent>
       </Card>
     </Container>
