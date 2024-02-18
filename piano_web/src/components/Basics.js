@@ -13,15 +13,15 @@ const Basics = () => {
     Time: {
       animation: <Metronome />,
       points: [
-        'Time changes tension',
+        'Tension changes over time',
         'Incorrect tension damages the instrument',
-        'Tuning increases the longevity of the piano'
+        'Damaged pianos may require more frequent tuning'
       ]
     },
     Temp: {
       animation: <div style={{ marginTop: '40px' }}><Snowflake /></div>, // Adjust marginTop as needed
       points: [
-        'Temperature changes warp wood',
+        'Temperature changes can warp wood',
         'Sudden changes in temperature will affect tension',
         'Ideal room temperature for pianos is between 20°C and 22°C'
       ]
@@ -40,7 +40,7 @@ const Basics = () => {
     <Container maxWidth="md" style={{ marginTop: '20px' }}>
       <Paper style={{ padding: '20px', backgroundColor: '#212121', color: '#f5f5dc' }}>
         <Typography variant="h4" component="h1" style={{ textAlign: 'center', marginBottom: '20px' }}>
-          Piano Preservation
+          Piano Preservation Tips
         </Typography>
         {/* Submenu buttons */}
         <Grid container spacing={2} justifyContent="center">
