@@ -4,18 +4,17 @@ import { Paper, Typography, Container, Card, CardContent, List, ListItem, ListIt
 const Pricing = () => {
   // Example services and prices
   const pricingDetails = [
-    { service: 'Standard Tuning', price: '$80.00' },
-    { service: 'Pitch raising + Multiple visit', price: '$140.00' },
+    { service: 'Standard Tuning', price: '$140.00' },
+    { service: 'Pitch raising + Multiple visit', price: '$180.00' },
     { service: 'Mechanism adjustments', price: '$20.00' },
+    { service: 'Payment Methods', price: 'Cash, credit card, and checks accepted' },
     // Add more services and prices as needed
   ];
 
   // Example general policies
   const generalPolicies = [
     { title: 'Cancellation Policy and Rescheduling', description: 'If you need to reschedule or cancel, simply call or leave a message by phone' },
-    { title: 'Travel fee ', description: 'If your piano is too old or damaged for tuning, there will be no charge' },
-    { title: 'Payment Methods', description: 'Cash, credit card, and checks accepted' },
-    // Add more policies as needed
+    { title: 'Travel fee ', description: 'If we determine your instrument is not serviceable, there will be no charge' }
   ];
 
   return (
@@ -24,14 +23,6 @@ const Pricing = () => {
         <Typography variant="h4" component="h1" style={{ textAlign: 'center', marginBottom: '20px' }}>
           Pricing & Policy
         </Typography>
-        <div style={{
-          height: '5px',
-          backgroundColor: '#f5f5dc',
-          width: 'calc(100% + 40px)',
-          position: 'absolute',
-          bottom: '0',
-          left: '-20px'
-        }}></div>
       </Paper>
       <Card style={{ marginTop: '20px', backgroundColor: '#ffffff', padding: '20px' }}>
         <CardContent>

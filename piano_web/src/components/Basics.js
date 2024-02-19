@@ -22,7 +22,7 @@ const Basics = () => {
       animation: <div style={{ marginTop: '40px' }}><Snowflake /></div>,
       points: [
         'Temperature changes can warp wood',
-        'Sudden changes in temperature will affect tension',
+        'Sudden changes in temperature will affect tension & tuning',
         'Ideal room temperature for pianos is between 20°C and 22°C'
       ]
     },
