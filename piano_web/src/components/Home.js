@@ -57,14 +57,16 @@ const Home = () => {
 
       <SimpleAnimation paperSize={paperSize} />
 
-      {/* Adjusted Contact Card */}
-      <Paper style={{ marginTop: isMobile ? '10px' : '30px', padding: '20px', backgroundColor: '#303030', color: '#f5f5dc' }}>
+     {/* Adjusted Contact Card */}
+     <Paper style={{ marginTop: isMobile ? '10px' : '30px', padding: '20px', backgroundColor: '#303030', color: '#f5f5dc' }}>
         <Typography variant="h5" component="h2" style={{ textAlign: 'center', marginBottom: '20px' }}>
-          Contact Us
+          Contact
         </Typography>
         <Grid container spacing={2} justifyContent="center" alignItems="center">
           <Grid item xs={12} sm={6} style={{ textAlign: 'center' }}>
-            <Typography variant="body1">Phone: (555) 123-4567</Typography>
+            <Typography variant="body1">
+              Phone: <a href="tel:(555)123-4567" style={{ color: 'rgba(212, 175, 55, 0.8)', textDecoration: 'underline' }}>(555) 123-4567</a>
+            </Typography>
             <Typography variant="body1">Email: contact@torontopianotuning.com</Typography>
           </Grid>
           <Grid item xs={12} sm={6} style={{ textAlign: 'center' }}>
